@@ -39,10 +39,12 @@ describe("Lottery Contract", function () {
 
       // Checking if the contract's balance increased
       const newBalance = await lottery.getBalance();
+      console.log(newBalance);
       expect(newBalance).to.be.equal(parseEther("0.1"));
 
       // Public getters generated for arrays require an index to be passed, so we'll check the 0 index (where this new player should be)
       const newPlayer = await lottery.players(0);
+      console.log(newPlayer);
       expect(newPlayer).to.be.equal(addr1.address);
     });
 
